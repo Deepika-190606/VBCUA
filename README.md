@@ -148,15 +148,37 @@ streamlit run app.py
 
 ## Screenshots
 
-Add screenshots here.
+## Home Page
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 50 08 PM" src="https://github.com/user-attachments/assets/da221c04-2964-454f-97e3-78ae511f042b" />
 
-Example:
+## Audio Upload
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 50 32 PM" src="https://github.com/user-attachments/assets/2dac79b4-15cc-484a-9dd8-58209242a755" />
 
-- Home Page
-- Results Dashboard
-- Waveform
-- Performance Chart
-- PDF Report
+## Analysis Process
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 50 39 PM" src="https://github.com/user-attachments/assets/372dd5d7-b86b-464a-81b0-1148737421a8" />
+
+## Results Dashboard
+
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 50 50 PM" src="https://github.com/user-attachments/assets/1f8f0e4f-5e53-44eb-b0ad-288e803f6f03" />
+
+## Overall Performance & AI feedback
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 51 04 PM" src="https://github.com/user-attachments/assets/181a023d-db97-4d64-8897-53127e77cd48" />
+
+## Evaluation Summary
+
+<img width="1469" height="640" alt="Screenshot 2026-07-14 at 6 51 15 PM" src="https://github.com/user-attachments/assets/5f4caac8-e1cf-4f9e-83eb-e663b22834d8" />
+
+## Performance Chart
+<img width="1469" height="705" alt="Screenshot 2026-07-14 at 6 51 25 PM" src="https://github.com/user-attachments/assets/2b64d947-57a2-4ac4-b476-b37c7db6f372" />
+
+## Audio Waveform
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 51 36 PM" src="https://github.com/user-attachments/assets/4db1edf7-b1ed-46f0-9fb0-9a0ecf475d48" />
+
+## Previous Evaluations
+<img width="1469" height="873" alt="Screenshot 2026-07-14 at 6 51 42 PM" src="https://github.com/user-attachments/assets/6265140e-30a1-4eb7-bc0d-b8764eb807f4" />
+
+## Generate PDF Report
+<img width="947" height="904" alt="Screenshot 2026-07-14 at 6 52 17 PM" src="https://github.com/user-attachments/assets/01dd64f3-5d38-447d-92d4-37bbf96fdfba" />
 
 ---
 
