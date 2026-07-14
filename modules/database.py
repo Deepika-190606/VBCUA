@@ -1,7 +1,8 @@
 import sqlite3
+import os
 from datetime import datetime
 
-DB_NAME = "database/results.db"
+DB_NAME = "vbcua.db"
 
 
 # ---------------- CREATE DATABASE ---------------- #
