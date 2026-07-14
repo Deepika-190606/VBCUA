@@ -1,4 +1,4 @@
-# 🎤 Voice-Based Concept Understanding Analyser (VBCUA)
+# Voice-Based Concept Understanding Analyser (VBCUA)
 
 ## Project Overview
 
@@ -56,7 +56,7 @@ It is designed for educational assessment, interview preparation, presentation p
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 VBCUA/
@@ -82,7 +82,7 @@ VBCUA/
 
 ---
 
-## ⚙ Installation
+## Installation
 
 Clone the repository
 
