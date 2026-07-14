@@ -7,6 +7,8 @@ import plotly.express as px
 from modules.speech_to_text import transcribe_audio
 from modules.semantic_similarity import compare_text, understanding_level
 from modules.audio_features import get_audio_duration, get_speech_rate, count_filler_words
+from modules.database import create_database, save_result, get_history
+from modules.pdf_generator import generate_pdf
 
 # ---------------- PAGE CONFIG ---------------- #
 st.set_page_config(
@@ -14,6 +16,9 @@ st.set_page_config(
     page_icon="🎤",
     layout="wide"
 )
+
+# Create database automatically
+create_database()
 
 # ---------------- STYLING ---------------- #
 st.markdown("""
@@ -136,7 +141,7 @@ if analyze:
         st.subheader("Overall Performance")
         
         overall_score = ((score * 100) + fluency_score) / 2
-        
+
         if overall_score >= 90: 
             st.success(f"Excellent Performance ({overall_score:.1f}%)")
         elif overall_score >= 75:
@@ -145,6 +150,19 @@ if analyze:
             st.warning(f"Moderate Performance ({overall_score:.1f}%)")
         else:
             st.error(f"Needs Improvement ({overall_score:.1f}%)")
+        
+                # ---------------- SAVE TO DATABASE ---------------- #
+        save_result(
+            student_name,
+            topic,
+            text,
+            score * 100,
+            fluency_score,
+            wpm,
+            duration,
+            fillers,
+            overall_score
+        )
         
         st.divider()
         
@@ -174,7 +192,20 @@ if analyze:
             
         for line in feedback: 
             st.write("✅", line)
-
+        
+        pdf_file = generate_pdf(
+            student_name,
+            topic,
+            text,
+            score * 100,
+            level,
+            fluency_score,
+            wpm,
+            duration,
+            fillers,
+            overall_score,
+            feedback
+        )
         st.divider()
 
         st.subheader("Reference Concept")
@@ -261,6 +292,33 @@ if analyze:
         st.pyplot(fig)
 
         st.divider()
+        st.subheader("📜 Previous Evaluations")
+
+        history = get_history()
+
+        if history:
+            history_df = pd.DataFrame(
+                history,
+                columns=[
+                    "Student",
+                    "Concept",
+                    "Overall Score",
+                    "Date"
+                ]
+            )
+
+            st.dataframe(history_df, use_container_width=True)
+        else:
+            st.info("No previous evaluations found.")
+
+        st.divider()
+
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(
+                label="📄 Download PDF Report",
+                data=pdf,
+                file_name=f"{student_name}_Report.pdf",
+                mime="application/pdf"
+            )
 
         st.caption("© 2026 Voice Based Concept Understanding Analyser (VBCUA)")
-
