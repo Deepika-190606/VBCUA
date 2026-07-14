@@ -295,7 +295,7 @@ if analyze:
         st.pyplot(fig)
 
         st.divider()
-        st.subheader("📜 Previous Evaluations")
+        st.subheader("Previous Evaluations")
 
         history = get_history()
 
