@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import librosa
 import librosa.display
 import plotly.express as px
+import os
 from modules.speech_to_text import transcribe_audio
 from modules.semantic_similarity import compare_text, understanding_level
 from modules.audio_features import get_audio_duration, get_speech_rate, count_filler_words
@@ -79,6 +80,8 @@ if analyze:
     if not audio_file:
         st.error("Please upload an audio file.")
     else:
+        os.makedirs("uploads", exist_ok=True)
+
         with open("uploads/audio.wav", "wb") as f:
             f.write(audio_file.getbuffer())
 
@@ -315,7 +318,7 @@ if analyze:
 
         with open(pdf_file, "rb") as pdf:
             st.download_button(
-                label="📄 Download PDF Report",
+                label="Download PDF Report",
                 data=pdf,
                 file_name=f"{student_name}_Report.pdf",
                 mime="application/pdf"
