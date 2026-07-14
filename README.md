@@ -160,6 +160,13 @@ Example:
 
 ---
 
+## Live Demo
+
+Try the deployed app:
+https://vbcuanalyser.streamlit.app/
+
+---
+
 ## Future Scope
 
 - User Login System
